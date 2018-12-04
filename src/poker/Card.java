@@ -31,4 +31,8 @@ public class Card implements Comparable<Card> {
         return Integer.compare(this.rank, other.rank);
     }
 
+    @Override
+    public String toString() {
+        return this.suit.getSymbol() + this.getRank();
+    }
 }
