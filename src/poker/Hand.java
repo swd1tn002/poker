@@ -13,39 +13,66 @@ public class Hand {
         }
     }
 
-    public boolean isPair() {
-        return false;
-    }
-
-    public boolean isThreeOfAKind() {
-        return false;
-    }
-
-    public boolean isTwoPairs() {
-        return false;
-    }
-
-    public boolean isFourOfAKind() {
-        return false;
-    }
-
-    public boolean isFullHouse() {
-        return false;
-    }
-
+    /**
+     * Any five cards of the same suit.
+     */
     public boolean isFlush() {
         return false;
     }
 
+    /**
+     * Two cards of the same rank.
+     */
+    public boolean isPair() {
+        return false;
+    }
+
+    /**
+     * Three cards of the same rank.
+     */
+    public boolean isThreeOfAKind() {
+        return false;
+    }
+
+    /**
+     * Two different pairs.
+     */
+    public boolean isTwoPairs() {
+        return false;
+    }
+
+    /**
+     * Four cards of the same rank.
+     */
+    public boolean isFourOfAKind() {
+        return false;
+    }
+
+    /**
+     * Three of a kind with a pair.
+     */
+    public boolean isFullHouse() {
+        return false;
+    }
+
+    /**
+     * Five cards in a sequence.
+     */
     public boolean isStraight() {
         return false;
     }
 
-    public boolean isRoyalFlush() {
+    /**
+     * Five cards in a sequence, all in the same suit.
+     */
+    public boolean isStraightFlush() {
         return false;
     }
 
-    public boolean isStraightFlush() {
+    /**
+     * A, K, Q, J, 10, all the same suit.
+     */
+    public boolean isRoyalFlush() {
         return false;
     }
 }
