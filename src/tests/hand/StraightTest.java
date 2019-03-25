@@ -1,28 +1,27 @@
-package tests;
+package tests.hand;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-import poker.Hand;
+import poker.PokerHand;
+import poker.HandBuilder;
 
-public class AdvancedTest extends BasicTest {
+public class StraightTest extends ManyCardsOfSameRankTest {
 
     @Test
-    public void testStraight() {
-        Hand hand = new Hand(clubs[6], hearts[2], diamonds[3], spades[4], clubs[5]);
+    public void testSimpleStraight() {
+        PokerHand hand = HandBuilder.createHand("♥6 ♦2 ♣3 ♠4 ♠5"); // Straight 2 -> 6
 
         assertTrue(hand.isStraight());
 
-        assertFalse(hand.isPair());
         assertFalse(hand.isStraightFlush());
-        assertFalse(hand.isFlush());
     }
 
     @Test
     public void testStraightFlush() {
-        Hand hand = new Hand(spades[6], spades[2], spades[3], spades[4], spades[5]);
+        PokerHand hand = HandBuilder.createHand("♥6 ♥2 ♥3 ♥4 ♥5"); // Straight 2 -> 6 and also a flush
 
         assertTrue(hand.isFlush());
         assertTrue(hand.isStraight());
@@ -33,18 +32,27 @@ public class AdvancedTest extends BasicTest {
     }
 
     @Test
-    public void testStraightWithHighAce() {
-        Hand hand = new Hand(hearts[1], spades[JACK], hearts[QUEEN], clubs[KING], hearts[10]);
+    public void testStraightFromTenToAce() {
+        PokerHand hand = HandBuilder.createHand("♥12 ♣10 ♠11 ♠1 ♥13");
 
         assertTrue(hand.isStraight());
 
         assertFalse(hand.isFlush());
         assertFalse(hand.isStraightFlush());
+        assertFalse(hand.isRoyalFlush());
+    }
+
+    @Test
+    public void testAlmostStraightButNotQuite() {
+        PokerHand hand = HandBuilder.createHand("♥12 ♣1 ♠11 ♠1 ♥13");
+
+        assertFalse(hand.isStraight());
+        assertFalse(hand.isRoyalFlush());
     }
 
     @Test
     public void testRoyalFlush() {
-        Hand hand = new Hand(spades[10], spades[1], spades[KING], spades[JACK], spades[QUEEN]);
+        PokerHand hand = HandBuilder.createHand("♠12 ♠10 ♠11 ♠1 ♠13");
 
         assertTrue(hand.isFlush());
         assertTrue(hand.isStraight());
