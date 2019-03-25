@@ -22,7 +22,7 @@ public class TextUI {
         if (value == null) {
             System.out.println("That hand has no value :(");
         } else {
-            System.out.println("You have " + value);
+            System.out.println("You have " + value + "!");
         }
 
         scanner.close();
