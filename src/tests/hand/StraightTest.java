@@ -5,10 +5,10 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
-import poker.PokerHand;
 import poker.HandBuilder;
+import poker.PokerHand;
 
-public class StraightTest extends ManyCardsOfSameRankTest {
+public class StraightTest {
 
     @Test
     public void testSimpleStraight() {
