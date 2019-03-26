@@ -10,19 +10,24 @@ public class TextUI {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Which cards do you have? ");
+        System.out.println("Which cards do you have? (example: ♥10 ♠1 ♦10 ♦7 ♠10)");
         String input = scanner.nextLine();
 
         System.out.println(); // Empty line
 
         PokerHand hand = HandBuilder.createHand(input);
 
-        String value = resolveHandValue(hand);
-
-        if (value == null) {
-            System.out.println("That hand has no value :(");
-        } else {
-            System.out.println("You have " + value + "!");
+        try {
+            String value = resolveHandValue(hand);
+            if (value == null) {
+                System.out.println("That hand has no value :(");
+            } else {
+                System.out.println("You have " + value + "!");
+            }
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        } catch (RuntimeException e) {
+            System.out.println(e.getMessage());
         }
 
         scanner.close();
