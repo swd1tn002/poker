@@ -2,7 +2,7 @@
 
 Tämä projekti toimii pohjana kuvitteelliselle keskeneräiselle pokeripelille. Projektissa on valmiina peruslogiikka, mutta eri pokerikäsien arvojen tunnistaminen on toteuttamatta.
 
-Pokerikäsien arvojen tunnistamista voidaan testata joko valmiilla JUnit-yksikkötesteillä tai manuaalisesti `poker.ui.TextUI`-luokassa olevan tekstikäyttöliittymän avulla. Tekstikäyttöliittymä odottaa pokerikäden syöttämistä esimerkiksi muodossa `♥1 ♦1 ♠4 ♣6 ♣8`.
+Pokerikäsien arvojen tunnistamista voidaan testata joko valmiilla JUnit-yksikkötesteillä tai manuaalisesti [poker.ui.TextUI](src/poker/ui/TextUI.java)-luokassa olevan tekstikäyttöliittymän avulla. Tekstikäyttöliittymä odottaa pokerikäden syöttämistä esimerkiksi muodossa `♥1 ♦1 ♠4 ♣6 ♣8`.
 
 Pelin logiikka on jaettu seuraaviin `poker`-paketissa sijaitseviin osakokonaisuuksiin:
 
@@ -19,6 +19,6 @@ Tämä Git-repositorio sisältää valmiin Eclipse-projektin, joka voidaan sella
 
 ## Testien suorittaminen
 
-Projektin tuomisen jälkeen sinun kannattaa testata projektin toimintaa joko valmiilla yksikkötesteillä tai suorittamalla `poker.ui.TextUI`-luokan main-metodi. 
+Projektin tuomisen jälkeen sinun kannattaa testata projektin toimintaa joko valmiilla yksikkötesteillä tai suorittamalla [poker.ui.TextUI](src/poker/ui/TextUI.java)-luokan main-metodin. 
 
 Yksikkötestit voidaan suorittaa klikkaamalla poker-projektia Eclipsen projektinäkymässä hiiren kakkospainikkeella ja valitsemalla **Run as -> JUnit Test**. Kaikki projektin yksikkötestit eivät mene alkutilanteessa läpi, koska osa logiikasta on vielä toteuttamatta.
