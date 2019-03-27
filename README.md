@@ -22,3 +22,7 @@ Tämä Git-repositorio sisältää valmiin Eclipse-projektin, joka voidaan sella
 Projektin tuomisen jälkeen sinun kannattaa testata projektin toimintaa joko valmiilla yksikkötesteillä tai suorittamalla [poker.ui.TextUI](src/poker/ui/TextUI.java)-luokan main-metodin. 
 
 Yksikkötestit voidaan suorittaa klikkaamalla poker-projektia Eclipsen projektinäkymässä hiiren kakkospainikkeella ja valitsemalla **Run as -> JUnit Test**. Kaikki projektin yksikkötestit eivät mene alkutilanteessa läpi, koska osa logiikasta on vielä toteuttamatta.
+
+## Pokeripelin kehittäminen
+
+[`PokerHand`](src/poker/PokerHand.java)-luokkaan on valmiiksi toteutettu metodeja, joiden on tarkoitus tarkastaa käteen kuuluvista korteista, mikä kyseisen käden arvo on. Nämä metodit palauttavat kuitenkin kovakoodattuja `false`-arvoja. Sinun tehtäväsi on kirjoittaa toteutukset erilaisten käsien tunnistamiseen. Toteutuksia koodatessasi voit hyödyntää valmiiksi kirjoitettuja testejä.
